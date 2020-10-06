@@ -37,7 +37,7 @@ client.connect(err => {
       })
 
   })
-  
+  // done..tnxxxkkkk
   app.delete('/delete/:id', (req, res) => {
     userCollection.deleteOne({
         _id: ObjectId(req.params.id)
