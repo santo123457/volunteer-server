@@ -37,7 +37,7 @@ client.connect(err => {
       })
 
   })
-  app.get
+  
   app.delete('/delete/:id', (req, res) => {
     userCollection.deleteOne({
         _id: ObjectId(req.params.id)
@@ -46,20 +46,22 @@ client.connect(err => {
         res.send(result.deletedCount > 0)
       )
   })
+
+
   app.get('/allUsers', (req, res) => {
     userCollection.find({})
       .toArray((err, documents) => {
         res.send(documents)
       })
-    app.delete('/deleteUser/:id', (req, res) => {
-      userCollection.deleteOne({
-          _id: ObjectId(req.params.id)
-        })
-        .then(result =>
-          console.log(result)
-        )
-    })
+  })
 
+  app.delete('/deleteUser/:id', (req, res) => {
+    userCollection.deleteOne({
+        _id: ObjectId(req.params.id)
+      })
+      .then(result =>
+        console.log(result)
+      )
   })
 
   app.post("/addTasks", (req, res) => {
